@@ -1,0 +1,1 @@
+# Please Go to http://localhost:3000/api-docs/ to view all the routes

@@ -1,0 +1,79 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "",
+    "description": "",
+    "version": "1.0"
+  },
+  "produces": ["application/json"],
+  "host": "localhost:8000",
+  "basePath": "/api/swagger/v1",
+  "paths": {
+    "/test1": {
+      "get": {
+        "x-swagger-router-controller": "middleware-name1",
+        "operationId": "swagTest",
+        "tags": ["/test"],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/api/register":{
+      "post":{
+        "description":"Register a new user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { 
+                    "description": "Name of user",
+                    "type": "string"
+                  },
+                  "email": {
+                    "description": "email of user",
+                    "type": "string"
+                  },
+                  "password": {
+                    "description": "Password of user",
+                    "type": "string"
+                  }
+                },
+                "required": ["name"] 
+              }
+            }
+          }
+        },
+        "responses":{
+          "200":{
+            "description":"Successfull created user"
+          }
+        }
+      }
+    },
+    "/api/login":{
+      "post":{
+        "description":"Login a user",
+        "body":{
+          "email":"test@test.com",
+          "password":"strongpassword."
+        }
+
+      }
+    },
+    "/api/logout":{
+      "delete":{
+        "description":"Logout a user"
+
+      }
+    },
+    "/api/profile":{
+      "get":{
+        "description":"Get user's profile"
+
+      }
+    }
+  }
+}
